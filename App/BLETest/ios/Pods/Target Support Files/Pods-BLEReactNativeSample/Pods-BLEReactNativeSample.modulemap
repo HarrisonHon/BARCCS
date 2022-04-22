@@ -1,0 +1,6 @@
+module Pods_BLEReactNativeSample {
+  umbrella header "Pods-BLEReactNativeSample-umbrella.h"
+
+  export *
+  module * { export * }
+}
