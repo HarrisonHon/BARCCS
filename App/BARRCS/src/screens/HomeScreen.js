@@ -1,12 +1,13 @@
 import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as React from 'react';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 
 const Tab = createBottomTabNavigator();
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   return (
       <ScrollView>
         <View style = {{flexDirection: 'row'}}>

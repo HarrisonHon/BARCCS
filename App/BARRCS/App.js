@@ -8,6 +8,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons, EvilIcons, Feather } from '@expo/vector-icons';
 import SettingScreen from './src/screens/SettingScreen';
+import HomeStack from './src/HomeStack';
 
 
 const Tab = createBottomTabNavigator();
@@ -22,7 +23,7 @@ export default function App() {
         <Ionicons name="home" color={color} size={size} />
       ),
     }}/>
-        <Tab.Screen name="Profile" component={ProfileScreen} options={{
+        <Tab.Screen name="Profile" component={HomeStack} options={{
       tabBarLabel: 'Profile',
       tabBarIcon: ({ color, size }) => (
         <EvilIcons name="user" color={color} size={size} />

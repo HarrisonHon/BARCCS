@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { render } from 'react-dom';
 import React, {useState} from 'react';
@@ -8,11 +8,18 @@ import React, {useState} from 'react';
 
 
 
-const ProfileScreen = () => {
+const ProfileScreen = ({navigation}) => {
   const [shouldShow, setShouldShow] = useState(true);
   if(shouldShow){
     return(
         <View >    
+                  <View>
+          <TouchableOpacity onPress={()=> navigation.navigate("Match")}>
+            <Text>
+              Profile
+            </Text>
+          </TouchableOpacity>
+        </View>
           <View style = {{flexDirection: 'row'}}>
             <Text style = {{marginLeft: 20, marginTop: 60, fontSize: 30, fontWeight: 'bold'}}>The Rock, </Text>
             <Text style = {{marginLeft: 0, marginTop: 60, fontSize: 30,}}> 49</Text>
