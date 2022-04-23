@@ -8,41 +8,24 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons, EvilIcons, Feather } from '@expo/vector-icons';
 import SettingScreen from './src/screens/SettingScreen';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Component } from 'react';
 
+const Stack = createStackNavigator();
 
-const Tab = createBottomTabNavigator();
-
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} options={{
-      tabBarLabel: 'Home',
-      tabBarIcon: ({ color, size }) => (
-        <Ionicons name="home" color={color} size={size} />
-      ),
-    }}/>
-        <Tab.Screen name="Profile" component={ProfileScreen} options={{
-      tabBarLabel: 'Profile',
-      tabBarIcon: ({ color, size }) => (
-        <EvilIcons name="user" color={color} size={size} />
-      ),
-    }}/>
-        <Tab.Screen name="Bluetooth" component={BluetoothPairingScreen} options={{
-      tabBarLabel: 'Bluetooth',
-      tabBarIcon: ({ color, size }) => (
-        <Ionicons name="bluetooth" color={color} size={size} />
-      ),
-    }}/>
-    <Tab.Screen name="Setting" component={SettingScreen} options={{
-      tabBarLabel: 'Setting',
-      tabBarIcon: ({ color, size }) => (
-        <Feather name="settings" color={color} size={size} />
-      ),
-    }}/>
-      </Tab.Navigator>
-    </NavigationContainer>
-  );
+export default class App extends Component {
+  render(){
+    return (
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false }}/>
+          <Stack.Screen name="Profile" component={ProfileScreen} options={{headerShown: false }}/>
+          <Stack.Screen name="Bluetooth" component={BluetoothPairingScreen} options={{headerShown: false }}/>
+      <Stack.Screen name="Setting" component={SettingScreen} options={{ headerShown: false}}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 };
 
 const styles = StyleSheet.create({
