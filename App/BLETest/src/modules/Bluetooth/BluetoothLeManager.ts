@@ -7,8 +7,8 @@ import {
   Device,
 } from 'react-native-ble-plx';
 
-const HEART_RATE_UUID = '0000180d-0000-1000-8000-00805f9b34fb';
-const HEART_RATE_CHARACTERISTIC = '00002a37-0000-1000-8000-00805f9b34fb';
+const COLLAR_UIK = '0000180d-0000-1000-8000-00805f9b34fb';
+const HM_10_CHARACTERISTIC = '00002a37-0000-1000-8000-00805f9b34fb';
 
 class BluetoothLeManager {
   bleManager: BleManager;
@@ -72,8 +72,8 @@ class BluetoothLeManager {
   ) => {
     await this.device?.discoverAllServicesAndCharacteristics();
     this.device?.monitorCharacteristicForService(
-      HEART_RATE_UUID,
-      HEART_RATE_CHARACTERISTIC,
+      COLLAR_UIK,
+      HM_10_CHARACTERISTIC,
       (error, characteristic) =>
         this.onHeartRateUpdate(error, characteristic, emitter),
     );

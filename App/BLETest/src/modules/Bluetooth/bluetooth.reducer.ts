@@ -47,10 +47,10 @@ const bluetoothReducer = createSlice({
       const isDuplicate = state.availableDevices.some(
         device => device.id === action.payload.id,
       );
-      const isCorsenseMonitor = action.payload?.name
+      const isBARCCS = action.payload?.name
         ?.toLowerCase()
-        ?.includes('corsense');
-      if (!isDuplicate && isCorsenseMonitor) {
+        ?.includes('barccs');
+      if (!isDuplicate && isBARCCS) {
         state.availableDevices = state.availableDevices.concat(action.payload);
       }
     },

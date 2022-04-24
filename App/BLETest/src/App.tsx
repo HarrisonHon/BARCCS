@@ -76,7 +76,7 @@ const Home: FC = () => {
         )}
       </View>
       <CTAButton
-        title="Connect"
+        title="Pair Device"
         onPress={() => {
           //dispatch(bluetoothPeripheralsFound(['AA:DD:CC:DD']));
           scanForPeripherals()
